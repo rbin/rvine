@@ -5,6 +5,7 @@
         Hello, #{current_user.name}
       %p
         %img{:src => current_user.avatar, :alt => "Avatar"}
+      %p= link_to("All vines", "/vines")
     - else
       %h1
         Hello, stranger
