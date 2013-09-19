@@ -1,0 +1,16 @@
+%p#notice= notice
+
+%h1= @vine.title
+
+<video src="#{@vine.video_url}" autoplay="autoplay" loop="loop" muted="true"></video>
+
+%h3 
+	Video Score:      #{@vine.score}
+
+%form{ :action => upvote_vine_path(@vine), :method => "put" }
+	%input{ :type => "submit" } Vote Up!
+
+
+= link_to 'Edit', edit_vine_path(@vine)
+\|
+= link_to 'Back', vines_path

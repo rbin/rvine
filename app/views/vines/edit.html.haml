@@ -1,0 +1,18 @@
+%h1 Editing #{@vine.title}
+
+#vine{"data-role" => "page"}
+
+	%div{"data-role" => "content"}
+		= form_for @vine do |f|
+			= hidden_field_tag :cas, @vine.meta[:cas]
+			%div{"data-role" => "fieldcontain"}
+				= f.label :title
+				= f.text_field :title
+			%div{"data-role" => "fieldcontain"}
+				= f.label :vine_url
+				= f.text_field :vine_url
+			= f.submit "Submit", :data => {:theme => "a"}
+
+= link_to 'Show', @vine
+\|
+= link_to 'Back', vines_path
