@@ -2,14 +2,13 @@
 
 %h1= @vine.title
 
-<video src="#{@vine.video_url}" autoplay="autoplay" loop="loop" muted="true"></video>
+%video{:src => @vine.video_url, :autoplay => "autoplay", :loop => "loop", :muted => true}
 
-%h3 
-	Video Score:      #{@vine.score}
+%h3
+  Video Score: #{@vine.score}
 
-%form{ :action => upvote_vine_path(@vine), :method => "put" }
-	%input{ :type => "submit" } Vote Up!
-
+= form_tag(upvote_vine_path(@vine), :method => "put") do
+  = submit_tag "Vote Up!"
 
 = link_to 'Edit', edit_vine_path(@vine)
 \|
