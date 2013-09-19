@@ -6,10 +6,9 @@ Rvine::Application.routes.draw do
     end
   end
 
-  # root :to => 'welcome#index'
-
   match '/auth/twitter/callback', :to => 'sessions#create'
 
   resource :dashboard
+  root :to => 'dashboards#show'
 
 end

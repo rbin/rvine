@@ -1,8 +1,14 @@
 %section#welcome
   .page-header
-    %h1
-      Hello, #{current_user.name}
-    %p
-      %img{:src => current_user.avatar, :alt => "Avatar"}
+    - if signed_in?
+      %h1
+        Hello, #{current_user.name}
+      %p
+        %img{:src => current_user.avatar, :alt => "Avatar"}
+    - else
+      %h1
+        Hello, stranger
+      %p
+        = link_to("Sign in with your twitter account", "/auth/twitter")
     %p
       &nbsp;
