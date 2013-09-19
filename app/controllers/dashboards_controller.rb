@@ -1,8 +1,8 @@
 class DashboardsController < ApplicationController
-	before_filter :authenticate!
+  before_filter :authenticate!
 
-	def show
-		
-	end	
+  def show
+
+  end
 
 end

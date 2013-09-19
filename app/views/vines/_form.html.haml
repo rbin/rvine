@@ -1,11 +1,11 @@
 #vine_form{"data-role" => "page"}
 
-	%div{"data-role" => "content"}
-		= form_for @vine do |f|
-			%div{"data-role" => "fieldcontain"}
-				= f.label :title
-				= f.text_field :title
-			%div{"data-role" => "fieldcontain"}
-				= f.label :vine_url
-				= f.text_field :vine_url
-			= f.submit "Submit", :data => {:theme => "a"}
+  %div{"data-role" => "content"}
+    = form_for @vine do |f|
+      %div{"data-role" => "fieldcontain"}
+        = f.label :title
+        = f.text_field :title
+      %div{"data-role" => "fieldcontain"}
+        = f.label :vine_url
+        = f.text_field :vine_url
+      = f.submit "Submit", :data => {:theme => "a"}
