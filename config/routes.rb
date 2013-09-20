@@ -1,5 +1,7 @@
 Rvine::Application.routes.draw do
 
+	root :to => 'vines#index'
+
   resources :vines do
     member do
       put :upvote
@@ -9,6 +11,7 @@ Rvine::Application.routes.draw do
   match '/auth/twitter/callback', :to => 'sessions#create'
 
   resource :dashboard
-  root :to => 'dashboards#show'
+
+  root :to => 'vines#index'
 
 end

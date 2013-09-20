@@ -1,0 +1,12 @@
+%ul.nav
+	- if signed_in?
+		%li
+			= link_to 'Top 10 Vines', vines_path 
+		%li
+			= link_to 'New Vine', new_vine_path
+		
+	- else
+		%li
+			= link_to 'Top 10', vines_path
+		%li
+			= link_to 'Login', "/auth/twitter"	
